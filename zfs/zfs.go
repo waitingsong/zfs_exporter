@@ -10,7 +10,7 @@ import (
 )
 
 var (
-	// ErrInvalidOutput is returned on unparseable CLI output
+	// ErrInvalidOutput is returned on unparsable CLI output
 	ErrInvalidOutput = errors.New(`Invalid output executing command`)
 )
 
