@@ -1,9 +1,9 @@
 # ZFS Exporter
 
-[![Test](https://github.com/pdf/zfs_exporter/actions/workflows/test.yml/badge.svg)](https://github.com/pdf/zfs_exporter/actions/workflows/test.yml)
-[![Release](https://github.com/pdf/zfs_exporter/actions/workflows/release.yml/badge.svg)](https://github.com/pdf/zfs_exporter/actions/workflows/release.yml)
-[![Go Report Card](https://goreportcard.com/badge/github.com/pdf/zfs_exporter)](https://goreportcard.com/report/github.com/pdf/zfs_exporter)
-[![License](https://img.shields.io/badge/License-MIT-%23a31f34)](https://github.com/pdf/zfs_exporter/blob/master/LICENSE)
+[![Test](https://github.com/waitingsong/zfs_exporter/actions/workflows/test.yml/badge.svg)](https://github.com/waitingsong/zfs_exporter/actions/workflows/test.yml)
+[![Release](https://github.com/waitingsong/zfs_exporter/actions/workflows/release.yml/badge.svg)](https://github.com/waitingsong/zfs_exporter/actions/workflows/release.yml)
+[![Go Report Card](https://goreportcard.com/badge/github.com/waitingsong/zfs_exporter)](https://goreportcard.com/report/github.com/waitingsong/zfs_exporter)
+[![License](https://img.shields.io/badge/License-MIT-%23a31f34)](https://github.com/waitingsong/zfs_exporter/blob/master/LICENSE)
 
 Prometheus exporter for ZFS (pools, filesystems, snapshots and volumes). Other implementations exist, however performance can be quite variable, producing occasional timeouts (and associated alerts). This exporter was built with a few features aimed at allowing users to avoid collecting more than they need to, and to ensure timeouts cannot occur, but that we eventually return useful data:
 
@@ -14,19 +14,19 @@ Prometheus exporter for ZFS (pools, filesystems, snapshots and volumes). Other i
 
 ## Installation
 
-Download the [latest release](https://github.com/pdf/zfs_exporter/releases/latest) for your platform, and unpack it somewhere on your filesystem.
+Download the [latest release](https://github.com/waitingsong/zfs_exporter/releases/latest) for your platform, and unpack it somewhere on your filesystem.
 
 You may also build the latest version using Go v1.11 - 1.17 via `go get`:
 
 ```bash
-go get -u github.com/pdf/zfs_exporter
+go get -u github.com/waitingsong/zfs_exporter
 ```
 
 Installation can also be accomplished using `go install`:
 
 ```bash
 version=latest # or a specific version tag
-go install github.com/pdf/zfs_exporter@$version
+go install github.com/waitingsong/zfs_exporter@$version
 ```
 
 ## Usage
