@@ -9,8 +9,8 @@ import (
 	"sync"
 	"time"
 
-	"github.com/pdf/zfs_exporter/v2/zfs"
 	"github.com/prometheus/client_golang/prometheus"
+	"github.com/waitingsong/zfs_exporter/v2/zfs"
 )
 
 type regexpCollection []*regexp.Regexp

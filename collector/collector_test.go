@@ -7,9 +7,9 @@ import (
 	"log/slog"
 	"time"
 
-	"github.com/pdf/zfs_exporter/v2/zfs"
 	"github.com/prometheus/client_golang/prometheus"
 	"github.com/prometheus/client_golang/prometheus/testutil"
+	"github.com/waitingsong/zfs_exporter/v2/zfs"
 )
 
 var logger = slog.New(slog.NewTextHandler(io.Discard, nil))

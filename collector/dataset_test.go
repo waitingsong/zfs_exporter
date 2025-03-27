@@ -6,8 +6,8 @@ import (
 	"testing"
 
 	"github.com/golang/mock/gomock"
-	"github.com/pdf/zfs_exporter/v2/zfs"
-	"github.com/pdf/zfs_exporter/v2/zfs/mock_zfs"
+	"github.com/waitingsong/zfs_exporter/v2/zfs"
+	"github.com/waitingsong/zfs_exporter/v2/zfs/mock_zfs"
 )
 
 type datasetResults struct {
@@ -202,7 +202,7 @@ zfs_dataset_available_bytes{name="testpool/test",pool="testpool",type="volume"} 
 					},
 				},
 			},
-			metricResults: `# HELP zfs_dataset_unsupported !!! This property is unsupported, results are likely to be undesirable, please file an issue at https://github.com/pdf/zfs_exporter/issues to have this property supported !!!
+			metricResults: `# HELP zfs_dataset_unsupported !!! This property is unsupported, results are likely to be undesirable, please file an issue at https://github.com/waitingsong/zfs_exporter/issues to have this property supported !!!
 # TYPE zfs_dataset_unsupported gauge
 zfs_dataset_unsupported{name="testpool/test",pool="testpool",type="filesystem"} 1024
 `,

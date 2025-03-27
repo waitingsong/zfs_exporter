@@ -7,8 +7,8 @@ import (
 	"strings"
 
 	"github.com/alecthomas/kingpin/v2"
-	"github.com/pdf/zfs_exporter/v2/zfs"
 	"github.com/prometheus/client_golang/prometheus"
+	"github.com/waitingsong/zfs_exporter/v2/zfs"
 )
 
 const (
@@ -21,9 +21,9 @@ const (
 	subsystemDataset = `dataset`
 	subsystemPool    = `pool`
 
-	propertyUnsupportedDesc = `!!! This property is unsupported, results are likely to be undesirable, please file an issue at https://github.com/pdf/zfs_exporter/issues to have this property supported !!!`
+	propertyUnsupportedDesc = `!!! This property is unsupported, results are likely to be undesirable, please file an issue at https://github.com/waitingsong/zfs_exporter/issues to have this property supported !!!`
 	propertyUnsupportedMsg  = `Unsupported dataset property, results are likely to be undesirable`
-	helpIssue               = `Please file an issue at https://github.com/pdf/zfs_exporter/issues`
+	helpIssue               = `Please file an issue at https://github.com/waitingsong/zfs_exporter/issues`
 )
 
 var (
