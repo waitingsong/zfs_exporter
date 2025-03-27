@@ -1,11 +1,13 @@
 # This is a basic workflow to help you get started with Actions
 name: Release
 
-# Controls when the action will run. Triggers the workflow on push or pull request
-# events but only for the master branch
 on:
-  push:
-    branches: ["master"]
+  workflow_dispatch:
+    inputs:
+      semver:
+        description: ''
+        required: false
+        default: ''
 
 env:
   PARALLELISM: 3
@@ -64,9 +66,16 @@ jobs:
           cat _CHANGELOG.md >> CHANGELOG.md
           rm -f _CHANGELOG.md
 
+      - name: Build
+        id: build
+        run: |
+          promu crossbuild --parallelism $PARALLELISM
+          promu crossbuild --parallelism $PARALLELISM tarballs
+          promu checksum .tarballs
+
       - name: Commit Changes
         id: commit_changes
-        uses: EndBug/add-and-commit@v9.1.1
+        uses: EndBug/add-and-commit@v9.1.4
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
@@ -76,17 +85,10 @@ jobs:
 
       - name: Commit Tag
         id: commit_tag
-        uses: mathieudutour/github-tag-action@v6.1
+        uses: mathieudutour/github-tag-action@v6.2
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           commit_sha: ${{ steps.commit_changes.outputs.commit_long_sha }}
-
-      - name: Build
-        id: build
-        run: |
-          promu crossbuild --parallelism $PARALLELISM
-          promu crossbuild --parallelism $PARALLELISM tarballs
-          promu checksum .tarballs
 
       - name: Create Release
         id: create_release
@@ -104,7 +106,7 @@ jobs:
 
       - name: Upload Release Assets
         id: upload_release_assets
-        uses: AButler/upload-release-assets@v2.0
+        uses: AButler/upload-release-assets@v3.0
         with:
           files: ".tarballs/*"
           repo-token: ${{ secrets.GITHUB_TOKEN }}
