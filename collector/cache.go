@@ -1,6 +1,7 @@
 package collector
 
 import (
+	"maps"
 	"sync"
 
 	"github.com/prometheus/client_golang/prometheus"
@@ -27,9 +28,7 @@ func (c *metricCache) merge(other *metricCache) {
 		other.RUnlock()
 		c.Unlock()
 	}()
-	for name, value := range other.cache {
-		c.cache[name] = value
-	}
+	maps.Copy(c.cache, other.cache)
 }
 
 func (c *metricCache) replace(other *metricCache) {
