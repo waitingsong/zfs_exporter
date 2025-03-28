@@ -1,3 +1,13 @@
+# [2.4.0](https://github.com/waitingsong/zfs_exporter/compare/v2.3.6...v2.4.0) (2025-03-28)
+
+
+### Features
+
+* **pool:** supports prop autotrim ([107efb7](https://github.com/waitingsong/zfs_exporter/commit/107efb7))
+
+
+
+
 ## [2.3.6](https://github.com/pdf/zfs_exporter/compare/v2.3.5...v2.3.6) (2025-01-18)
 
 
