@@ -26,6 +26,13 @@ var (
 				transformNumeric,
 				poolLabels...,
 			),
+			`autotrim`: newProperty(
+				subsystemPool,
+				`autotrim`,
+				`Auto trim status of the pool [0: off, 1: on].`,
+				transformBool,
+				poolLabels...,
+			),
 			`dedupratio`: newProperty(
 				subsystemPool,
 				`dedupratio`,
