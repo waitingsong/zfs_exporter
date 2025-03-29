@@ -1,3 +1,13 @@
+# [2.5.0](https://github.com/waitingsong/zfs_exporter/compare/v2.4.0...v2.5.0) (2025-03-29)
+
+
+### Features
+
+* **pool:** supports prop ashift ([70b6338](https://github.com/waitingsong/zfs_exporter/commit/70b6338))
+
+
+
+
 # [2.4.0](https://github.com/waitingsong/zfs_exporter/compare/v2.3.6...v2.4.0) (2025-03-28)
 
 
