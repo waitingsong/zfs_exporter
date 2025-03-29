@@ -26,6 +26,13 @@ var (
 				transformNumeric,
 				poolLabels...,
 			),
+			`ashift`: newProperty(
+				subsystemPool,
+				`ashift`,
+				`Pool sector size exponent, to the power of 2.`,
+				transformNumeric,
+				poolLabels...,
+			),
 			`autotrim`: newProperty(
 				subsystemPool,
 				`autotrim`,
