@@ -33,6 +33,20 @@ var (
 				transformNumeric,
 				poolLabels...,
 			),
+			`autoexpand`: newProperty(
+				subsystemPool,
+				`autoexpand`,
+				`Controls automatic pool expansion when the underlying LUN is grown [0: off, 1: on].`,
+				transformBool,
+				poolLabels...,
+			),
+			`autoreplace`: newProperty(
+				subsystemPool,
+				`autoreplace`,
+				`Controls automatic device replacement. [0: off, 1: on].`,
+				transformBool,
+				poolLabels...,
+			),
 			`autotrim`: newProperty(
 				subsystemPool,
 				`autotrim`,
