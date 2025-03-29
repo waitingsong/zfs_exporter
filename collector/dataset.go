@@ -21,6 +21,13 @@ var (
 		defaultSubsystem: subsystemDataset,
 		defaultLabels:    datasetLabels,
 		store: map[string]property{
+			`atime`: newProperty(
+				subsystemDataset,
+				`atime`,
+				`Whether the access time for files is updated when they are read [0: off, 1: on].`,
+				transformBool,
+				datasetLabels...,
+			),
 			`available`: newProperty(
 				subsystemDataset,
 				`available_bytes`,
@@ -33,6 +40,20 @@ var (
 				`compressratio`,
 				`The ratio of compressed size vs uncompressed size for this dataset.`,
 				transformMultiplier,
+				datasetLabels...,
+			),
+			`creation`: newProperty(
+				subsystemDataset,
+				`creation`,
+				`The time this dataset was created.`,
+				transformNumeric,
+				datasetLabels...,
+			),
+			`exec`: newProperty(
+				subsystemDataset,
+				`exec`,
+				`Whether processes can be executed from within this file system [0: off, 1: on].`,
+				transformBool,
 				datasetLabels...,
 			),
 			`logicalused`: newProperty(
@@ -49,10 +70,24 @@ var (
 				transformNumeric,
 				datasetLabels...,
 			),
+			`mounted`: newProperty(
+				subsystemDataset,
+				`mounted`,
+				`Whether the file system is currently mounted. [0: no, 1: yes].`,
+				transformBool,
+				datasetLabels...,
+			),
 			`quota`: newProperty(
 				subsystemDataset,
 				`quota_bytes`,
 				`The maximum amount of space in bytes this dataset and its descendents can consume.`,
+				transformNumeric,
+				datasetLabels...,
+			),
+			`recordsize`: newProperty(
+				subsystemDataset,
+				`recordsize`,
+				`Specifies a suggested block size for files in the file system.`,
 				transformNumeric,
 				datasetLabels...,
 			),
@@ -82,6 +117,13 @@ var (
 				`referenced_reservation_bytes`,
 				`The minimum amount of space in bytes guaranteed to this dataset.`,
 				transformNumeric,
+				datasetLabels...,
+			),
+			`relatime`: newProperty(
+				subsystemDataset,
+				`relatime`,
+				`Controls the manner in which the access time is updated when atime=on is set [0: off, 1: on].`,
+				transformBool,
 				datasetLabels...,
 			),
 			`reservation`: newProperty(
