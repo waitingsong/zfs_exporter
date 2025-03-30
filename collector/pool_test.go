@@ -23,7 +23,7 @@ func TestPoolMetrics(t *testing.T) {
 			name:           `all metrics`,
 			pools:          []string{`testpool`},
 			propsRequested: []string{`allocated`, `dedupratio`, `capacity`, `expandsize`, `fragmentation`, `free`, `freeing`, `health`, `leaked`, `readonly`, `size`},
-			metricNames:    []string{`zfs_pool_allocated_bytes`, `zfs_pool_deduplication_ratio`, `zfs_pool_capacity_ratio`, `zfs_pool_expand_size_bytes`, `zfs_pool_fragmentation_ratio`, `zfs_pool_free_bytes`, `zfs_pool_freeing_bytes`, `zfs_pool_health`, `zfs_pool_leaked_bytes`, `zfs_pool_readonly`, `zfs_pool_size_bytes`},
+			metricNames:    []string{`zfs_pool_allocated_bytes`, `zfs_pool_dedupratio`, `zfs_pool_capacity_ratio`, `zfs_pool_expand_size_bytes`, `zfs_pool_fragmentation_ratio`, `zfs_pool_free_bytes`, `zfs_pool_freeing_bytes`, `zfs_pool_health`, `zfs_pool_leaked_bytes`, `zfs_pool_readonly`, `zfs_pool_size_bytes`},
 			propsResults: map[string]map[string]string{
 				`testpool`: {
 					`allocated`:     `1024`,
@@ -45,9 +45,9 @@ zfs_pool_allocated_bytes{pool="testpool"} 1024
 # HELP zfs_pool_capacity_ratio Ratio of pool space used.
 # TYPE zfs_pool_capacity_ratio gauge
 zfs_pool_capacity_ratio{pool="testpool"} 0.5
-# HELP zfs_pool_deduplication_ratio The ratio of deduplicated size vs undeduplicated size for data in this pool.
-# TYPE zfs_pool_deduplication_ratio gauge
-zfs_pool_deduplication_ratio{pool="testpool"} 2.5
+# HELP zfs_pool_dedupratio The ratio of deduplicated size vs undeduplicated size for data in this pool.
+# TYPE zfs_pool_dedupratio gauge
+zfs_pool_dedupratio{pool="testpool"} 2.5
 # HELP zfs_pool_expand_size_bytes Amount of uninitialized space within the pool or device that can be used to increase the total capacity of the pool.
 # TYPE zfs_pool_expand_size_bytes gauge
 zfs_pool_expand_size_bytes{pool="testpool"} 2048
@@ -170,7 +170,7 @@ zfs_pool_unsupported{pool="testpool"} 1024
 			name:           `legacy fragmentation/dedupratio`,
 			pools:          []string{`testpool`},
 			propsRequested: []string{`fragmentation`, `dedupratio`},
-			metricNames:    []string{`zfs_pool_fragmentation_ratio`, `zfs_pool_deduplication_ratio`},
+			metricNames:    []string{`zfs_pool_fragmentation_ratio`, `zfs_pool_dedupratio`},
 			propsResults: map[string]map[string]string{
 				`testpool`: {
 					`fragmentation`: `5%`,
@@ -180,9 +180,9 @@ zfs_pool_unsupported{pool="testpool"} 1024
 			metricResults: `# HELP zfs_pool_fragmentation_ratio The fragmentation ratio of the pool.
 # TYPE zfs_pool_fragmentation_ratio gauge
 zfs_pool_fragmentation_ratio{pool="testpool"} 0.05
-# HELP zfs_pool_deduplication_ratio The ratio of deduplicated size vs undeduplicated size for data in this pool.
-# TYPE zfs_pool_deduplication_ratio gauge
-zfs_pool_deduplication_ratio{pool="testpool"} 2.5
+# HELP zfs_pool_dedupratio The ratio of deduplicated size vs undeduplicated size for data in this pool.
+# TYPE zfs_pool_dedupratio gauge
+zfs_pool_dedupratio{pool="testpool"} 2.5
 `,
 		},
 	}

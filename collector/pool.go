@@ -28,7 +28,7 @@ var (
 			),
 			`dedupratio`: newProperty(
 				subsystemPool,
-				`deduplication_ratio`,
+				`dedupratio`,
 				`The ratio of deduplicated size vs undeduplicated size for data in this pool.`,
 				transformMultiplier,
 				poolLabels...,

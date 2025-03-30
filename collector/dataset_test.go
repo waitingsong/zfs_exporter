@@ -31,7 +31,7 @@ func TestDatsetMetrics(t *testing.T) {
 			kinds:          []zfs.DatasetKind{zfs.DatasetFilesystem},
 			pools:          []string{`testpool`},
 			propsRequested: []string{`available`, `compressratio`, `logicalused`, `logicalreferenced`, `quota`, `refcompressratio`, `referenced`, `refquota`, `refreservation`, `reservation`, `snapshot_count`, `snapshot_limit`, `used`, `usedbychildren`, `usedbydataset`, `usedbyrefreservation`, `usedbysnapshots`, `volsize`, `written`},
-			metricNames:    []string{`zfs_dataset_available_bytes`, `zfs_dataset_compression_ratio`, `zfs_dataset_logical_used_bytes`, `zfs_dataset_logical_referenced_bytes`, `zfs_dataset_quota_bytes`, `zfs_dataset_referenced_compression_ratio`, `zfs_dataset_referenced_bytes`, `zfs_dataset_referenced_quota_bytes`, `zfs_dataset_reservation_bytes`, `zfs_dataset_snapshot_count_total`, `zfs_datset_snapshot_limit_total`, `zfs_dataset_used_bytes`, `zfs_dataset_used_by_children_bytes`, `zfs_dataset_used_by_datset_bytes`, `zfs_datset_used_by_referenced_reservation_bytes`, `zfs_dataset_used_by_snapshot_bytes`, `zfs_dataset_volume_size_bytes`, `zfs_dataset_written_bytes`},
+			metricNames:    []string{`zfs_dataset_available_bytes`, `zfs_dataset_compressratio`, `zfs_dataset_logical_used_bytes`, `zfs_dataset_logical_referenced_bytes`, `zfs_dataset_quota_bytes`, `zfs_dataset_refcompressratio`, `zfs_dataset_referenced_bytes`, `zfs_dataset_referenced_quota_bytes`, `zfs_dataset_reservation_bytes`, `zfs_dataset_snapshot_count_total`, `zfs_datset_snapshot_limit_total`, `zfs_dataset_used_bytes`, `zfs_dataset_used_by_children_bytes`, `zfs_dataset_used_by_datset_bytes`, `zfs_datset_used_by_referenced_reservation_bytes`, `zfs_dataset_used_by_snapshot_bytes`, `zfs_dataset_volume_size_bytes`, `zfs_dataset_written_bytes`},
 			propsResults: map[string][]datasetResults{
 				`testpool`: {
 					{
@@ -62,9 +62,9 @@ func TestDatsetMetrics(t *testing.T) {
 			metricResults: `# HELP zfs_dataset_available_bytes The amount of space in bytes available to the dataset and all its children.
 # TYPE zfs_dataset_available_bytes gauge
 zfs_dataset_available_bytes{name="testpool/test",pool="testpool",type="filesystem"} 1024
-# HELP zfs_dataset_compression_ratio The ratio of compressed size vs uncompressed size for this dataset.
-# TYPE zfs_dataset_compression_ratio gauge
-zfs_dataset_compression_ratio{name="testpool/test",pool="testpool",type="filesystem"} 2.5
+# HELP zfs_dataset_compressratio The ratio of compressed size vs uncompressed size for this dataset.
+# TYPE zfs_dataset_compressratio gauge
+zfs_dataset_compressratio{name="testpool/test",pool="testpool",type="filesystem"} 2.5
 # HELP zfs_dataset_logical_used_bytes The amount of space in bytes that is "logically" consumed by this dataset and all its descendents. See the "used_bytes" property.
 # TYPE zfs_dataset_logical_used_bytes gauge
 zfs_dataset_logical_used_bytes{name="testpool/test",pool="testpool",type="filesystem"} 1024
@@ -77,9 +77,9 @@ zfs_dataset_quota_bytes{name="testpool/test",pool="testpool",type="filesystem"} 
 # HELP zfs_dataset_referenced_bytes The amount of data in bytes that is accessible by this dataset, which may or may not be shared with other datasets in the pool.
 # TYPE zfs_dataset_referenced_bytes gauge
 zfs_dataset_referenced_bytes{name="testpool/test",pool="testpool",type="filesystem"} 1024
-# HELP zfs_dataset_referenced_compression_ratio The ratio of compressed size vs uncompressed size for the referenced space of this dataset. See also the "compression_ratio" property.
-# TYPE zfs_dataset_referenced_compression_ratio gauge
-zfs_dataset_referenced_compression_ratio{name="testpool/test",pool="testpool",type="filesystem"} 24
+# HELP zfs_dataset_refcompressratio The ratio of compressed size vs uncompressed size for the referenced space of this dataset. See also the "compression_ratio" property.
+# TYPE zfs_dataset_refcompressratio gauge
+zfs_dataset_refcompressratio{name="testpool/test",pool="testpool",type="filesystem"} 24
 # HELP zfs_dataset_reservation_bytes The minimum amount of space in bytes guaranteed to a dataset and its descendants.
 # TYPE zfs_dataset_reservation_bytes gauge
 zfs_dataset_reservation_bytes{name="testpool/test",pool="testpool",type="filesystem"} 1024
