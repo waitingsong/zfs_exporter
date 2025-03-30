@@ -1,3 +1,16 @@
+## [3.1.0](https://github.com/waitingsong/zfs_exporter/compare/v3.0.0...v3.1.0) (2025-03-30)
+
+
+### Features
+
+* **pool:** supports prop autotrim ([e68fdee](https://github.com/waitingsong/zfs_exporter/commit/e68fdee93056fa338e46633d738ff861b5fb8af5))
+
+
+### Code Refactoring
+
+* **cache:** merge() with maps.Copy ([9c383c7](https://github.com/waitingsong/zfs_exporter/commit/9c383c752c0ed537c512a03f71302829c3d0037a))
+
+
 ## [3.0.0](https://github.com/waitingsong/zfs_exporter/compare/v2.3.6...v3.0.0) (2025-03-30)
 
 
