@@ -1,3 +1,11 @@
+## [3.3.0](https://github.com/waitingsong/zfs_exporter/compare/v3.2.0...v3.3.0) (2025-03-30)
+
+
+### Features
+
+* **pool:** supports props autoexpand and autoreplace ([5d5f8b1](https://github.com/waitingsong/zfs_exporter/commit/5d5f8b145a70a37183c5643f0593c744aedbc997))
+
+
 ## [3.2.0](https://github.com/waitingsong/zfs_exporter/compare/v3.1.0...v3.2.0) (2025-03-30)
 
 
