@@ -1,3 +1,11 @@
+## [3.4.0](https://github.com/waitingsong/zfs_exporter/compare/v3.3.0...v3.4.0) (2025-03-30)
+
+
+### Features
+
+* **dataset:** supports more props ([afec7b0](https://github.com/waitingsong/zfs_exporter/commit/afec7b017d9f24ce3c690bd3fe00f4a519da6a7c))
+
+
 ## [3.3.0](https://github.com/waitingsong/zfs_exporter/compare/v3.2.0...v3.3.0) (2025-03-30)
 
 
