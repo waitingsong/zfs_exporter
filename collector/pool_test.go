@@ -47,7 +47,7 @@ zfs_pool_allocated_bytes{pool="testpool"} 1024
 zfs_pool_capacity_ratio{pool="testpool"} 0.5
 # HELP zfs_pool_deduplication_ratio The ratio of deduplicated size vs undeduplicated size for data in this pool.
 # TYPE zfs_pool_deduplication_ratio gauge
-zfs_pool_deduplication_ratio{pool="testpool"} 0.4
+zfs_pool_deduplication_ratio{pool="testpool"} 2.5
 # HELP zfs_pool_expand_size_bytes Amount of uninitialized space within the pool or device that can be used to increase the total capacity of the pool.
 # TYPE zfs_pool_expand_size_bytes gauge
 zfs_pool_expand_size_bytes{pool="testpool"} 2048
@@ -182,7 +182,7 @@ zfs_pool_unsupported{pool="testpool"} 1024
 zfs_pool_fragmentation_ratio{pool="testpool"} 0.05
 # HELP zfs_pool_deduplication_ratio The ratio of deduplicated size vs undeduplicated size for data in this pool.
 # TYPE zfs_pool_deduplication_ratio gauge
-zfs_pool_deduplication_ratio{pool="testpool"} 0.4
+zfs_pool_deduplication_ratio{pool="testpool"} 2.5
 `,
 		},
 	}

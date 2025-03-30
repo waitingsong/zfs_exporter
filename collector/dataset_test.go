@@ -64,7 +64,7 @@ func TestDatsetMetrics(t *testing.T) {
 zfs_dataset_available_bytes{name="testpool/test",pool="testpool",type="filesystem"} 1024
 # HELP zfs_dataset_compression_ratio The ratio of compressed size vs uncompressed size for this dataset.
 # TYPE zfs_dataset_compression_ratio gauge
-zfs_dataset_compression_ratio{name="testpool/test",pool="testpool",type="filesystem"} 0.4
+zfs_dataset_compression_ratio{name="testpool/test",pool="testpool",type="filesystem"} 2.5
 # HELP zfs_dataset_logical_used_bytes The amount of space in bytes that is "logically" consumed by this dataset and all its descendents. See the "used_bytes" property.
 # TYPE zfs_dataset_logical_used_bytes gauge
 zfs_dataset_logical_used_bytes{name="testpool/test",pool="testpool",type="filesystem"} 1024
@@ -79,7 +79,7 @@ zfs_dataset_quota_bytes{name="testpool/test",pool="testpool",type="filesystem"} 
 zfs_dataset_referenced_bytes{name="testpool/test",pool="testpool",type="filesystem"} 1024
 # HELP zfs_dataset_referenced_compression_ratio The ratio of compressed size vs uncompressed size for the referenced space of this dataset. See also the "compression_ratio" property.
 # TYPE zfs_dataset_referenced_compression_ratio gauge
-zfs_dataset_referenced_compression_ratio{name="testpool/test",pool="testpool",type="filesystem"} 0.041666666666666664
+zfs_dataset_referenced_compression_ratio{name="testpool/test",pool="testpool",type="filesystem"} 24
 # HELP zfs_dataset_reservation_bytes The minimum amount of space in bytes guaranteed to a dataset and its descendants.
 # TYPE zfs_dataset_reservation_bytes gauge
 zfs_dataset_reservation_bytes{name="testpool/test",pool="testpool",type="filesystem"} 1024

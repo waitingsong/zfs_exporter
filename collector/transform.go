@@ -81,5 +81,5 @@ func transformMultiplier(value string) (float64, error) {
 	if err != nil {
 		return -1, err
 	}
-	return 1 / v, nil
+	return v, nil
 }
