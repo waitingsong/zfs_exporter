@@ -1,3 +1,38 @@
+## [3.0.0](https://github.com/waitingsong/zfs_exporter/compare/v2.3.6...v3.0.0) (2025-03-30)
+
+
+### ⚠ BREAKING CHANGES
+
+* return value of transformMultiplier() as multiplier instead of percent
+* value unit changed to multiplier instead of percent
+
+### Features
+
+* change return value of transformMultiplier() ([36ee03a](https://github.com/waitingsong/zfs_exporter/commit/36ee03ab6a770beb50729bdac743504a31f8cd8d))
+
+
+### Code Refactoring
+
+* rename metrics name of pool and dataset ([05bfc30](https://github.com/waitingsong/zfs_exporter/commit/05bfc30b2c96b7799c4b885102ee147880409f19))
+
+
+### Documentation
+
+* update README.md ([0c76590](https://github.com/waitingsong/zfs_exporter/commit/0c7659038375bfe6c20beb75f31d829f59bfbce8))
+
+
+### Build Systems
+
+* update crossbuild.platforms ([b9064b2](https://github.com/waitingsong/zfs_exporter/commit/b9064b27c70d4fd22391d63f7da58d1ab447ccdd))
+
+
+### Continuous Integration
+
+* update ([fc45fdb](https://github.com/waitingsong/zfs_exporter/commit/fc45fdbafae5cedff3c70ab59734388d9d9943a7))
+* update ([eb4a403](https://github.com/waitingsong/zfs_exporter/commit/eb4a4038cfe35926bd6ef1c32196eaa10de23d1c))
+* update release.yml ([746f60e](https://github.com/waitingsong/zfs_exporter/commit/746f60e797e823ceabf6fb69c57d476128d661b5))
+
+
 ## [2.3.6](https://github.com/pdf/zfs_exporter/compare/v2.3.5...v2.3.6) (2025-01-18)
 
 
