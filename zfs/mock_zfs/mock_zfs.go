@@ -8,7 +8,7 @@ import (
 	reflect "reflect"
 
 	gomock "github.com/golang/mock/gomock"
-	zfs "github.com/waitingsong/zfs_exporter/v2/zfs"
+	zfs "github.com/waitingsong/zfs_exporter/v3/zfs"
 )
 
 // MockClient is a mock of Client interface.

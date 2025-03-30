@@ -1,4 +1,4 @@
-module github.com/waitingsong/zfs_exporter/v2
+module github.com/waitingsong/zfs_exporter/v3
 
 go 1.23
 

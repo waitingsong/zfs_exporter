@@ -5,8 +5,8 @@ import (
 	"os"
 	"strings"
 
-	"github.com/waitingsong/zfs_exporter/v2/collector"
-	"github.com/waitingsong/zfs_exporter/v2/zfs"
+	"github.com/waitingsong/zfs_exporter/v3/collector"
+	"github.com/waitingsong/zfs_exporter/v3/zfs"
 
 	"github.com/alecthomas/kingpin/v2"
 	"github.com/prometheus/client_golang/prometheus"

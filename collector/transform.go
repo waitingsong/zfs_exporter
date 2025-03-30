@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"strconv"
 
-	"github.com/waitingsong/zfs_exporter/v2/zfs"
+	"github.com/waitingsong/zfs_exporter/v3/zfs"
 )
 
 type poolHealthCode int

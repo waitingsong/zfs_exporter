@@ -6,7 +6,7 @@ import (
 	"sync"
 
 	"github.com/prometheus/client_golang/prometheus"
-	"github.com/waitingsong/zfs_exporter/v2/zfs"
+	"github.com/waitingsong/zfs_exporter/v3/zfs"
 )
 
 const (
