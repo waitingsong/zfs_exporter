@@ -142,3 +142,16 @@ func transformLogbias(logbias string) (float64, error) {
 
 	return -1, fmt.Errorf(`unknown logbias: %s`, logbias)
 }
+
+func transformSync(value string) (float64, error) {
+	switch value {
+	case `standard`:
+		return 1, nil
+	case `always`:
+		return 2, nil
+	case `disabled`:
+		return 0, nil
+	}
+
+	return -1, fmt.Errorf(`unknown sync: %s`, value)
+}

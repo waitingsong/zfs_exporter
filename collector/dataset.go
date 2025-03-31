@@ -161,6 +161,13 @@ var (
 				transformNumeric,
 				datasetLabels...,
 			),
+			`sync`: newProperty(
+				subsystemDataset,
+				`sync`,
+				`The sync behavior of this dataset [1: standard, 2: always, 0: disabled].`,
+				transformSync,
+				datasetLabels...,
+			),
 			`used`: newProperty(
 				subsystemDataset,
 				`used_bytes`,
