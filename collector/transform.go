@@ -130,3 +130,15 @@ func transformCompression(algo string) (float64, error) {
 
 	return float64(result), nil
 }
+
+// `Handling of synchronous requests in this dataset. [1: latency, 2: throughput].`,
+func transformLogbias(logbias string) (float64, error) {
+	switch logbias {
+	case `latency`:
+		return 1, nil
+	case `throughput`:
+		return 2, nil
+	}
+
+	return -1, fmt.Errorf(`unknown logbias: %s`, logbias)
+}

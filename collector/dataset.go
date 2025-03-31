@@ -63,6 +63,13 @@ var (
 				transformBool,
 				datasetLabels...,
 			),
+			`logbias`: newProperty(
+				subsystemDataset,
+				`logbias`,
+				`Handling of synchronous requests in this dataset. [1: latency, 2: throughput].`,
+				transformLogbias,
+				datasetLabels...,
+			),
 			`logicalused`: newProperty(
 				subsystemDataset,
 				`logical_used_bytes`,

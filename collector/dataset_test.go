@@ -27,11 +27,27 @@ func TestDatsetMetrics(t *testing.T) {
 		metricResults  string
 	}{
 		{
-			name:           `all metrics`,
-			kinds:          []zfs.DatasetKind{zfs.DatasetFilesystem},
-			pools:          []string{`testpool`},
-			propsRequested: []string{`available`, `compression`, `compressratio`, `logicalused`, `logicalreferenced`, `quota`, `refcompressratio`, `referenced`, `refquota`, `refreservation`, `reservation`, `snapshot_count`, `snapshot_limit`, `used`, `usedbychildren`, `usedbydataset`, `usedbyrefreservation`, `usedbysnapshots`, `volsize`, `written`},
-			metricNames:    []string{`zfs_dataset_available_bytes`, `zfs_dataset_compression`, `zfs_dataset_compressratio`, `zfs_dataset_logical_used_bytes`, `zfs_dataset_logical_referenced_bytes`, `zfs_dataset_quota_bytes`, `zfs_dataset_refcompressratio`, `zfs_dataset_referenced_bytes`, `zfs_dataset_referenced_quota_bytes`, `zfs_dataset_reservation_bytes`, `zfs_dataset_snapshot_count_total`, `zfs_datset_snapshot_limit_total`, `zfs_dataset_used_bytes`, `zfs_dataset_used_by_children_bytes`, `zfs_dataset_used_by_datset_bytes`, `zfs_datset_used_by_referenced_reservation_bytes`, `zfs_dataset_used_by_snapshot_bytes`, `zfs_dataset_volume_size_bytes`, `zfs_dataset_written_bytes`},
+			name:  `all metrics`,
+			kinds: []zfs.DatasetKind{zfs.DatasetFilesystem},
+			pools: []string{`testpool`},
+			propsRequested: []string{
+				`available`, `compression`, `compressratio`,
+				`logbias`,
+				`logicalused`, `logicalreferenced`, `quota`,
+				`refcompressratio`, `referenced`, `refquota`,
+				`refreservation`, `reservation`, `snapshot_count`,
+				`snapshot_limit`, `used`, `usedbychildren`,
+				`usedbydataset`, `usedbyrefreservation`, `usedbysnapshots`,
+				`volsize`, `written`},
+			metricNames: []string{
+				`zfs_dataset_available_bytes`, `zfs_dataset_compression`, `zfs_dataset_compressratio`,
+				`zfs_dataset_logbias`,
+				`zfs_dataset_logical_used_bytes`, `zfs_dataset_logical_referenced_bytes`, `zfs_dataset_quota_bytes`,
+				`zfs_dataset_refcompressratio`, `zfs_dataset_referenced_bytes`, `zfs_dataset_referenced_quota_bytes`,
+				`zfs_dataset_reservation_bytes`, `zfs_dataset_snapshot_count_total`, `zfs_datset_snapshot_limit_total`,
+				`zfs_dataset_used_bytes`, `zfs_dataset_used_by_children_bytes`, `zfs_dataset_used_by_datset_bytes`,
+				`zfs_datset_used_by_referenced_reservation_bytes`, `zfs_dataset_used_by_snapshot_bytes`, `zfs_dataset_volume_size_bytes`,
+				`zfs_dataset_written_bytes`},
 			propsResults: map[string][]datasetResults{
 				`testpool`: {
 					{
@@ -40,6 +56,7 @@ func TestDatsetMetrics(t *testing.T) {
 							`available`:            `1024`,
 							`compression`:          `zstd-2`,
 							`compressratio`:        `2.50`,
+							`logbias`:              `latency`,
 							`logicalused`:          `1024`,
 							`logicalreferenced`:    `512`,
 							`quota`:                `512`,
@@ -105,6 +122,9 @@ zfs_dataset_written_bytes{name="testpool/test",pool="testpool",type="filesystem"
 # HELP zfs_dataset_compression The compression algorithm used for this dataset. [0: off, 1: on, 2: lz4, 3: zstd, 4: zstd-fast, 3xx: zstd-N, 4xxxx: zstd-fast-N].
 # TYPE zfs_dataset_compression gauge
 zfs_dataset_compression{name="testpool/test",pool="testpool",type="filesystem"} 302
+# HELP zfs_dataset_logbias Handling of synchronous requests in this dataset. [1: latency, 2: throughput].
+# TYPE zfs_dataset_logbias gauge
+zfs_dataset_logbias{name="testpool/test",pool="testpool",type="filesystem"} 1
 `,
 		},
 		{
