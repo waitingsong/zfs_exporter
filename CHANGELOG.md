@@ -1,3 +1,11 @@
+## [3.6.0](https://github.com/waitingsong/zfs_exporter/compare/v3.5.0...v3.6.0) (2025-03-31)
+
+
+### Features
+
+* **dataset:** add prop logbias ([5149ef9](https://github.com/waitingsong/zfs_exporter/commit/5149ef9f3f6be204a1fc27a3594d7b5351c291e1))
+
+
 ## [3.5.0](https://github.com/waitingsong/zfs_exporter/compare/v3.4.1...v3.5.0) (2025-03-31)
 
 
