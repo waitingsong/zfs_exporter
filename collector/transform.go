@@ -83,3 +83,50 @@ func transformMultiplier(value string) (float64, error) {
 	}
 	return v, nil
 }
+
+type compressionCode int
+
+// `The compression algorithm used for this dataset. [0: off, 1: on, 2: lz4, 3: zstd, 4: zstd-fast, 3xx: zstd-N, 4xxxx: zstd-fast-N].`,
+const (
+	compressOff compressionCode = iota
+	compressOn
+	compressLZ4
+	compressZSTD
+	compressZSTDFast
+)
+
+func transformCompression(algo string) (float64, error) {
+	var result compressionCode
+	switch zfs.CompressionAlgo(algo) {
+	case zfs.CompressOff:
+		result = compressOff
+
+	case zfs.CompressOn:
+		result = compressOn
+
+	case zfs.CompressLZ4:
+		result = compressLZ4
+
+	case zfs.CompressZSTD:
+		result = compressZSTD
+	case zfs.CompressZSTDFast:
+		result = compressZSTDFast
+
+	default:
+		// 4xxxx: zstd-fast-N, N=0-1000
+		if len(algo) > 10 && algo[0:10] == `zstd-fast-` {
+			if n, err := strconv.Atoi(algo[10:]); err == nil {
+				return float64(40000 + n), nil
+			}
+		} else if len(algo) > 5 && algo[0:5] == `zstd-` { // 3xx: zstd-N, N=0-19
+			if n, err := strconv.Atoi(algo[5:]); err == nil {
+				return float64(300 + n), nil
+			}
+		}
+
+		// return -1, fmt.Errorf(`unknown compress algo: %s`, algo)
+		result = compressOn
+	}
+
+	return float64(result), nil
+}

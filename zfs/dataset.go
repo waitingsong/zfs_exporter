@@ -96,3 +96,13 @@ func newDatasetHandler() *datasetHandler {
 		store: make(map[string]*datasetPropertiesImpl),
 	}
 }
+
+type CompressionAlgo string
+
+const (
+	CompressOff      CompressionAlgo = `off`
+	CompressOn       CompressionAlgo = `on`
+	CompressLZ4      CompressionAlgo = `lz4`
+	CompressZSTD     CompressionAlgo = `zstd`
+	CompressZSTDFast CompressionAlgo = `zstd-fast`
+)

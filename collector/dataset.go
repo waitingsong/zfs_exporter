@@ -35,6 +35,13 @@ var (
 				transformNumeric,
 				datasetLabels...,
 			),
+			`compression`: newProperty(
+				subsystemDataset,
+				`compression`,
+				`The compression algorithm used for this dataset. [0: off, 1: on, 2: lz4, 3: zstd, 4: zstd-fast, 3xx: zstd-N, 4xxxx: zstd-fast-N].`,
+				transformCompression,
+				datasetLabels...,
+			),
 			`compressratio`: newProperty(
 				subsystemDataset,
 				`compressratio`,
