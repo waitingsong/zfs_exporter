@@ -1,3 +1,11 @@
+### [3.8.1](https://github.com/waitingsong/zfs_exporter/compare/v3.8.0...v3.8.1) (2025-03-31)
+
+
+### Build Systems
+
+* update deps ([fdd0f91](https://github.com/waitingsong/zfs_exporter/commit/fdd0f91dae51b71553870a605e7082440c9e770e))
+
+
 ## [3.8.0](https://github.com/waitingsong/zfs_exporter/compare/v3.7.0...v3.8.0) (2025-03-31)
 
 
