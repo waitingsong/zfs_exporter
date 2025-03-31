@@ -1,3 +1,6 @@
+### [3.4.1](https://github.com/waitingsong/zfs_exporter/compare/v3.4.0...v3.4.1) (2025-03-31)
+
+
 ## [3.4.0](https://github.com/waitingsong/zfs_exporter/compare/v3.3.0...v3.4.0) (2025-03-30)
 
 
