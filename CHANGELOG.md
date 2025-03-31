@@ -1,3 +1,11 @@
+## [3.8.0](https://github.com/waitingsong/zfs_exporter/compare/v3.7.0...v3.8.0) (2025-03-31)
+
+
+### Features
+
+* **dataset:** add prop primarycache ([0d9bef1](https://github.com/waitingsong/zfs_exporter/commit/0d9bef1b841b4346188aeb4f4a5c2bdf8a75718b))
+
+
 ## [3.7.0](https://github.com/waitingsong/zfs_exporter/compare/v3.6.0...v3.7.0) (2025-03-31)
 
 
