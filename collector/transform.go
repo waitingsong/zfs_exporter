@@ -155,3 +155,16 @@ func transformSync(value string) (float64, error) {
 
 	return -1, fmt.Errorf(`unknown sync: %s`, value)
 }
+
+func transformPrimaryCache(value string) (float64, error) {
+	switch value {
+	case `all`:
+		return 1, nil
+	case `metadata`:
+		return 2, nil
+	case `none`:
+		return 0, nil
+	}
+
+	return -1, fmt.Errorf(`unknown primarycache: %s`, value)
+}

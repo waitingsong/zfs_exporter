@@ -91,6 +91,13 @@ var (
 				transformBool,
 				datasetLabels...,
 			),
+			`primarycache`: newProperty(
+				subsystemDataset,
+				`primarycache`,
+				`What is cached in the primary cache (ARC) [1: all, 2: metadata, 0: none].`,
+				transformPrimaryCache,
+				datasetLabels...,
+			),
 			`quota`: newProperty(
 				subsystemDataset,
 				`quota_bytes`,

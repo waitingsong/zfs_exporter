@@ -37,6 +37,7 @@ func TestDatsetMetrics(t *testing.T) {
 				`logbias`,
 				`logicalused`,
 				`logicalreferenced`,
+				`primarycache`,
 				`quota`,
 				`refcompressratio`,
 				`referenced`,
@@ -60,6 +61,7 @@ func TestDatsetMetrics(t *testing.T) {
 				`zfs_dataset_logbias`,
 				`zfs_dataset_logical_used_bytes`,
 				`zfs_dataset_logical_referenced_bytes`,
+				`zfs_dataset_primarycache`,
 				`zfs_dataset_quota_bytes`,
 				`zfs_dataset_refcompressratio`,
 				`zfs_dataset_referenced_bytes`,
@@ -86,6 +88,7 @@ func TestDatsetMetrics(t *testing.T) {
 							`logbias`:              `latency`,
 							`logicalused`:          `1024`,
 							`logicalreferenced`:    `512`,
+							`primarycache`:         `all`,
 							`quota`:                `512`,
 							`refcompressratio`:     `24.00`,
 							`referenced`:           `1024`,
@@ -156,6 +159,9 @@ zfs_dataset_logbias{name="testpool/test",pool="testpool",type="filesystem"} 1
 # HELP zfs_dataset_sync The sync behavior of this dataset [1: standard, 2: always, 0: disabled].
 # TYPE zfs_dataset_sync gauge
 zfs_dataset_sync{name="testpool/test",pool="testpool",type="filesystem"} 1
+# HELP zfs_dataset_primarycache What is cached in the primary cache (ARC) [1: all, 2: metadata, 0: none].
+# TYPE zfs_dataset_primarycache gauge
+zfs_dataset_primarycache{name="testpool/test",pool="testpool",type="filesystem"} 1
 `,
 		},
 		{
