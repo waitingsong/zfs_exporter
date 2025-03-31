@@ -38,7 +38,7 @@ var (
 			`compressratio`: newProperty(
 				subsystemDataset,
 				`compressratio`,
-				`The ratio of compressed size vs uncompressed size for this dataset.`,
+				`For non-snapshots, the compression ratio achieved for the used space of this dataset, For snapshots, the compressratio is the same as the refcompressratio property`,
 				transformMultiplier,
 				datasetLabels...,
 			),
@@ -94,7 +94,7 @@ var (
 			`refcompressratio`: newProperty(
 				subsystemDataset,
 				`refcompressratio`,
-				`The ratio of compressed size vs uncompressed size for the referenced space of this dataset. See also the "compression_ratio" property.`,
+				`The compression ratio achieved for the referenced space of this dataset, expressed as a multiplier.`,
 				transformMultiplier,
 				datasetLabels...,
 			),
