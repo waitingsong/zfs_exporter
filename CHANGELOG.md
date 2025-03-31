@@ -1,3 +1,11 @@
+## [3.7.0](https://github.com/waitingsong/zfs_exporter/compare/v3.6.0...v3.7.0) (2025-03-31)
+
+
+### Features
+
+* **dataset:** add prop sync ([1dd9951](https://github.com/waitingsong/zfs_exporter/commit/1dd9951656edef9eaea8f7da5d0212727ec9e4f8))
+
+
 ## [3.6.0](https://github.com/waitingsong/zfs_exporter/compare/v3.5.0...v3.6.0) (2025-03-31)
 
 
