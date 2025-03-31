@@ -1,3 +1,16 @@
+## [3.5.0](https://github.com/waitingsong/zfs_exporter/compare/v3.4.1...v3.5.0) (2025-03-31)
+
+
+### Features
+
+* **dataset:** add prop compression ([274d796](https://github.com/waitingsong/zfs_exporter/commit/274d796ffb0d3c925fd87c4c971e71d6166a891e))
+
+
+### Tests
+
+* fix HELP messages ([1ab13f8](https://github.com/waitingsong/zfs_exporter/commit/1ab13f87ea86d371642ae5adfec3a58e0d0bff6c))
+
+
 ### [3.4.1](https://github.com/waitingsong/zfs_exporter/compare/v3.4.0...v3.4.1) (2025-03-31)
 
 
