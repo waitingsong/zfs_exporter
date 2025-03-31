@@ -38,7 +38,7 @@ var (
 			`compressratio`: newProperty(
 				subsystemDataset,
 				`compressratio`,
-				`For non-snapshots, the compression ratio achieved for the used space of this dataset, For snapshots, the compressratio is the same as the refcompressratio property`,
+				`For non-snapshots, the compression ratio achieved for the used space of this dataset, For snapshots, the compressratio is the same as the refcompressratio property.`,
 				transformMultiplier,
 				datasetLabels...,
 			),

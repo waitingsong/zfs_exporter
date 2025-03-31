@@ -62,7 +62,7 @@ func TestDatsetMetrics(t *testing.T) {
 			metricResults: `# HELP zfs_dataset_available_bytes The amount of space in bytes available to the dataset and all its children.
 # TYPE zfs_dataset_available_bytes gauge
 zfs_dataset_available_bytes{name="testpool/test",pool="testpool",type="filesystem"} 1024
-# HELP zfs_dataset_compressratio The ratio of compressed size vs uncompressed size for this dataset.
+# HELP zfs_dataset_compressratio For non-snapshots, the compression ratio achieved for the used space of this dataset, For snapshots, the compressratio is the same as the refcompressratio property.
 # TYPE zfs_dataset_compressratio gauge
 zfs_dataset_compressratio{name="testpool/test",pool="testpool",type="filesystem"} 2.5
 # HELP zfs_dataset_logical_used_bytes The amount of space in bytes that is "logically" consumed by this dataset and all its descendents. See the "used_bytes" property.
@@ -77,7 +77,7 @@ zfs_dataset_quota_bytes{name="testpool/test",pool="testpool",type="filesystem"} 
 # HELP zfs_dataset_referenced_bytes The amount of data in bytes that is accessible by this dataset, which may or may not be shared with other datasets in the pool.
 # TYPE zfs_dataset_referenced_bytes gauge
 zfs_dataset_referenced_bytes{name="testpool/test",pool="testpool",type="filesystem"} 1024
-# HELP zfs_dataset_refcompressratio The ratio of compressed size vs uncompressed size for the referenced space of this dataset. See also the "compression_ratio" property.
+# HELP zfs_dataset_refcompressratio The compression ratio achieved for the referenced space of this dataset, expressed as a multiplier.
 # TYPE zfs_dataset_refcompressratio gauge
 zfs_dataset_refcompressratio{name="testpool/test",pool="testpool",type="filesystem"} 24
 # HELP zfs_dataset_reservation_bytes The minimum amount of space in bytes guaranteed to a dataset and its descendants.
